@@ -1,19 +1,20 @@
-import { config } from "dotenv";
-config();
-import { getFirestore } from "firebase/firestore";
-import { initializeApp } from "firebase/app";
+import admin from "firebase-admin";
+import { readFileSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
 
-const firebaseConfig = {
-  apiKey: process.env.APIKEY,
-  authDomain: process.env.AUTHDOMAIN,
-  projectId: process.env.PROJECTID,
-  storageBucket: process.env.STORAGEBUCKET,
-  messagingSenderId: process.env.MESSAGINGSENDERID,
-  appId: process.env.APPID,
-};
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
+// Leer el archivo y parsear el JSON
+const serviceAccount = JSON.parse(
+  readFileSync(join(__dirname, "serviceAccountKey.json"), "utf-8")
+);
 
-const db = getFirestore(app);
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
+
+const db = admin.firestore();
+
 export { db };

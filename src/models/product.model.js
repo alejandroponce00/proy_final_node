@@ -1,34 +1,27 @@
-// model
+// modelo
 import { db } from "../config/db.js";
-import {
-  collection,
-  doc,
-  getDoc,
-  getDocs,
-  addDoc,
-  updateDoc,
-  deleteDoc,
-} from "firebase/firestore";
 
-const productCollection = collection(db, "productos");
+
+const productCollection = db.collection("productos");
 
 export const getAllProducts = async () => {
   try {
-    const productList = await getDocs(productCollection);
+    const snapshot = await productCollection.get();
     const products = [];
-    productList.forEach((doc) => products.push({ id: doc.id, ...doc.data() }));
-
+    snapshot.forEach((doc) => {
+      products.push({ id: doc.id, ...doc.data() });
+    });
     return products;
   } catch (error) {
-    throw new Error("Error", error.message);
+    throw new Error("Error al obtener productos: " + error.message);
   }
 };
 
 export const saveProduct = async (product) => {
   try {
-    const newProduct = await addDoc(productCollection, product);
-    return newProduct
+    const newDoc = await productCollection.add(product);
+    return { id: newDoc.id };
   } catch (error) {
-    throw new Error("Error", error.message);
+    throw new Error("Error al guardar producto: " + error.message);
   }
 };
