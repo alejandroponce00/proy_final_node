@@ -1,111 +1,30 @@
-# Plantilla de servidor con capas Express
+# 🧪 API REST de Productos - Proyecto Final Node.js
 
-Este proyecto es una plantilla básica para configurar un servidor con **Express** y **Nodemon**, ideal para iniciar rápidamente nuevos desarrollos en Node.js.
-
-## Características
-
-- **Express** para gestionar rutas y middleware.
-- **Nodemon** para recargar automáticamente el servidor durante el desarrollo.
-- Configuración minimalista lista para usar.
+Este proyecto es el **Trabajo Final Integrador** del curso de **Node.js** impartido por [Talento Tech](https://talentotech.bue.edu.ar/). Consiste en una API REST construida con Express.js y conectada a una base de datos **Firestore de Firebase**, que permite gestionar un catálogo de productos.
 
 ---
 
-## Instalación
+## 🚀 Tecnologías utilizadas
 
-### 1. Clonar el repositorio con `degit`
-
-`degit` es una herramienta para clonar plantillas de manera limpia (sin el historial de Git).
-
-#### Instalar `degit` (si no lo tienes instalado)
-
-```bash
-npm install -g degit
-```
-
-#### Clonar el repositorio
-
-```bash
-degit DanielRiverol/template-express-layers carpeta-destino
-```
-
-Reemplaza `usuario/repo-nombre` por el nombre del repositorio y `carpeta-destino` por el nombre de la carpeta donde deseas clonar el proyecto.
-
-### 2. Instalar dependencias
-
-Una vez clonado el repositorio, entra en la carpeta del proyecto:
-
-```bash
-cd carpeta-destino
-```
-
-Luego, instala las dependencias:
-
-```bash
-npm install
-```
+- **Node.js** (ambiente de ejecución)
+- **Express.js** (framework de servidor)
+- **Firebase Firestore** (base de datos NoSQL)
+- **Firebase Admin SDK** (acceso backend a Firestore)
+- **dotenv** (manejo de variables de entorno)
+- **Thunder Client** o Postman (para testear endpoints)
 
 ---
 
-## Comandos disponibles
+## 📦 Funcionalidades principales
 
-### Iniciar el servidor
+Esta API permite realizar operaciones completas sobre productos mediante un CRUD (Create, Read, Update, Delete):
 
-Este comando inicia el servidor en modo desarrollo con Nodemon:
+- **📥 Crear** un nuevo producto
+- **📄 Leer** todos los productos o uno en específico
+- **✏️ Actualizar** un producto existente
+- **🗑️ Eliminar** un producto
 
-```bash
-npm run dev
-```
+Cada operación está disponible a través de endpoints RESTful bien definidos.
 
-### Actualizar dependencias (Opcional)
+## 📁 Estructura del proyecto
 
-Para poder todas estas dependencias a su última versión, deberás instalar un paquete llamado `npm-check-updates` de forma global:
-
-```bash
-npm install -g npm-check-updates
-```
-
-Una vez instalado deberás correr el siguiente comando:
-
-```bash
-ncu -u
-```
-
-Esto modificará tu archivo package.json para que todas las dependencias estén listadas en sus últimas versiones.
-
-Una vez completado este proceso, basta con ejecutar el siguiente comando para actualizar todas tus dependencias:
-
-```bash
-npm install
-```
-
-## Estructura del proyecto
-``` plaintext
-carpeta-destino/
-├── config/                 # Configuraciones generales (DB, variables de entorno, etc.)
-│   └── db.js               # Configuración de la base de datos
-│
-├── controllers/           # Controladores: lógica que responde a las rutas
-│   └── user.controller.js
-│
-├── services/              # Servicios: lógica de negocio reutilizable
-│   └── user.service.js
-│
-├── routes/                # Definición de rutas y middlewares asociados
-│   └── user.routes.js
-│
-├── models/                # Modelos de datos (si usás MongoDB, Sequelize, etc.)
-│   └── user.model.js
-│
-├── middlewares/           # Middlewares personalizados
-│   └── auth.middleware.js
-│
-├── index.js               # Punto de entrada del servidor
-├── package.json           # Dependencias y scripts
-├── README.md              # Documentación del proyecto
-
-```
----
-
-## Licencia
-
-Este proyecto está licenciado bajo la licencia **MIT**. Consulta el archivo [LICENSE](./LICENSE) para más detalles.
