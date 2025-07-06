@@ -1,3 +1,5 @@
 .env
 node_modules
 src/config/serviceAccountKey.json
+# Claves privadas
+serviceAccountKey
