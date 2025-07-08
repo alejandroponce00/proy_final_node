@@ -41,7 +41,7 @@ Cada operación está expuesta como un endpoint **RESTful** siguiendo las buenas
 ---
 
 ## 📁 Estructura del proyecto
-'''
+```
 proy_final/
 ├── src/
 │ ├── config/ # Configuración de Firebase
@@ -61,7 +61,7 @@ proy_final/
 ├── .env # Variables de entorno
 ├── package.json
 └── README.md
-'''
+```
 ---
 
 ## 🔧 Configuración de Firebase
