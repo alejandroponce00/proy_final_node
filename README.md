@@ -1,4 +1,4 @@
-# 🧪 API REST de Productos - Proyecto Final Node.js
+# Alejandro Ponce | Proyecto Final Node.js - API REST de Productos 
 
 Este proyecto es el **Trabajo Final Integrador del curso de Node.js** impartido por **Talento Tech**. Se trata de una API REST construida con **Express.js** y conectada a una base de datos **Firestore (Firebase)** que permite **gestionar un catálogo de productos**.
 
