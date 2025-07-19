@@ -1,9 +1,11 @@
 import express from "express";
+import cors from "cors";
 import { join, __dirname } from "./utils/index.js";
 import productRoutes from "./routes/product.route.js";
 // import {db}from './config/db.js'
 //settings
 const app = express();
+app.use(cors());
 app.set("PORT", 5000);
 
 // middlewares

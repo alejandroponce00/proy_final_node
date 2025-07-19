@@ -1,18 +1,24 @@
 {
   "name": "template-server-layers",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
+    "build": "echo 'No build step needed'",
+    "vercel-build": "echo 'Build completed'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "Daniel Riverol",
+  "author": "Alejandro Ponce",
   "license": "MIT",
   "type": "module",
-  "description": "Plantilla de servidor con capas ",
+  "description": "Plantilla de servidor con capas optimizado para Vercel",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^17.0.1",
     "express": "^5.1.0",
     "firebase-admin": "^13.4.0"
