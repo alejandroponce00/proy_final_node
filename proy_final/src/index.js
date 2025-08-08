@@ -5,7 +5,7 @@ import productRoutes from "./routes/product.route.js";
 
 // settings
 const app = express();
-app.set("PORT", 5000);
+const PORT = process.env.PORT || 5000;
 
 // Configuración CORS
 app.use(cors({
@@ -25,15 +25,15 @@ app.get("/", (req, res) => {
   res.json({ title: "Home Page" });
 });
 
-// Ruta base para productos
-app.use("/api/products", productRoutes);
+// Rutas de productos
+app.use("/api", productRoutes);
 
 // Ruta catch-all para manejar cualquier otro endpoint
-app.use("/*", (req, res) => {
+app.use((req, res) => {
   res.status(404).json({ error: "Endpoint not found" });
 });
 
 // listeners
-app.listen(app.get("PORT"), () => {
-  console.log(`Server on port http://localhost:${app.get("PORT")}`);
+app.listen(PORT, () => {
+  console.log(`Server on port ${PORT}`);
 });
