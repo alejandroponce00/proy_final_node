@@ -2,7 +2,6 @@ import express from "express";
 import cors from "cors";
 import { join, __dirname } from "./utils/index.js";
 import productRoutes from "./routes/product.route.js";
-// import {db} from './config/db.js'
 
 // settings
 const app = express();
@@ -10,7 +9,7 @@ app.set("PORT", 5000);
 
 // Configuración CORS
 app.use(cors({
-  origin: true,  // Permite todos los orígenes
+  origin: true,
   credentials: true,
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization']
@@ -25,7 +24,14 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/", (req, res) => {
   res.json({ title: "Home Page" });
 });
+
+// Ruta base para productos
 app.use("/api/products", productRoutes);
+
+// Ruta catch-all para manejar cualquier otro endpoint
+app.use("/*", (req, res) => {
+  res.status(404).json({ error: "Endpoint not found" });
+});
 
 // listeners
 app.listen(app.get("PORT"), () => {
