@@ -10,7 +10,7 @@ app.set("PORT", 5000);
 
 // Configuración CORS para solo permitir ciertos orígenes
 const allowedOrigins = [
-  'https://front-proy-final-node.vercel.app/',
+  'https://front-proy-final-node.vercel.app',
   'http://localhost:5000',
   'http://localhost:3000'
 ];
