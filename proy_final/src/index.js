@@ -8,22 +8,12 @@ import productRoutes from "./routes/product.route.js";
 const app = express();
 app.set("PORT", 5000);
 
-// Configuración CORS para solo permitir ciertos orígenes
-const allowedOrigins = [
-  'https://front-proy-final-node.vercel.app',
-  'http://localhost:5000',
-  'http://localhost:3000'
-];
-
+// Configuración CORS
 app.use(cors({
-  origin: function (origin, callback) {
-    // Permite solicitudes sin origen (Postman, curl) o si el origen está en la whitelist
-    if (!origin || allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
-  }
+  origin: true,  // Permite todos los orígenes
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // middlewares
