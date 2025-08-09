@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API de Productos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .api-routes {
+            margin: 20px 0;
+        }
+        .api-routes h2 {
+            margin-bottom: 15px;
+        }
+        .api-list {
+            list-style: none;
+            padding: 0;
+        }
+        .api-list li {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #f5f5f5;
+            border-radius: 5px;
+        }
+        .api-list a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .api-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>API de Productos</h1>
+        <p>Bienvenido a la API de gestión de productos</p>
+    </div>
+
+    <div class="api-routes">
+        <h2>Endpoints disponibles</h2>
+        <ul class="api-list">
+            <li>
+                <strong>GET /api/</strong> - Obtener todos los productos
+            </li>
+            <li>
+                <strong>POST /api/</strong> - Crear un nuevo producto
+            </li>
+            <li>
+                <strong>GET /api/:id</strong> - Obtener producto por ID
+            </li>
+            <li>
+                <strong>PUT /api/:id</strong> - Actualizar producto
+            </li>
+            <li>
+                <strong>DELETE /api/:id</strong> - Eliminar producto
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
