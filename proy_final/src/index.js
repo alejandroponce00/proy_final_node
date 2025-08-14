@@ -5,7 +5,11 @@ import productRoutes from "./routes/product.route.js";
 // import {db}from './config/db.js'
 //settings
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: 'https://front-proy-final-node.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.set("PORT", 5000);
 
 // middlewares
